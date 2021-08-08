@@ -1,19 +1,23 @@
 const readlineSync = require('readline-sync');
 const chalk = require('chalk');
 
-var name = readlineSync.question(chalk.bold('Hey, What\'s your name? '));
-console.log(`Welcome, ${name}!`);
+let name = readlineSync.question(chalk.yellow('Hey, What\'s your name? '));
 
-console.log('');
+while(name.length === 0) {
+	name = readlineSync.question(chalk.yellow('Hey, What\'s your name? '));
+}
 
-console.log('Let\'s see how much do you know me! ');
-
-console.log('');
+console.log(chalk.yellow(`Welcome, ${name}! \n`));
+console.log(chalk.yellow('Let\'s see how much do you know me! \n'));
 
 let score = 0;
 
 function askQuestion(ques, ans) {
-	var userAns = readlineSync.question(chalk.bold(ques));
+	let userAns = readlineSync.question(chalk.bold(ques));
+
+	while(userAns.length === 0) {
+		userAns = readlineSync.question(chalk.bold(ques));
+	}
 
 	if(userAns.toLowerCase() == ans) {
 		console.log(chalk.bold.greenBright('Correct Answer :)'));
@@ -22,16 +26,19 @@ function askQuestion(ques, ans) {
 		console.log(chalk.bold.red('Incorrect Answer :('));
 	}
 
-	console.log(chalk.underline(`Score: ${score}`));
-	console.log(" ");
+	console.log(chalk.underline(`Score: ${score} \n`));
 }
 
 var quesList = [
 	{
-		q: 'What is my name? ',
-		a: 'himadri',
+		q: 'What is my full name? ',
+		a: 'himadri shah',
 	},
-		{
+	{
+		q: 'What is my age? ',
+		a: '21',
+	},
+	{
 		q: 'Where do I live? ',
 		a: 'rajkot',
 	},
