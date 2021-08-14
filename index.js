@@ -19,12 +19,12 @@ function askQuestion(ques, ans) {
 		userAns = readlineSync.question(chalk.bold(ques));
 	}
 
-	if(userAns.toLowerCase() == ans) {
+	if(userAns.toLowerCase() == ans.toLowerCase()) {
 		console.log(chalk.bold.greenBright('Correct Answer :)'));
 		score++;
 	} else {
 		console.log(chalk.bold.red('Incorrect Answer :('));
-	}
+		console.log(chalk.bold.greenBright(`The correct answer is ${ans}.`));}
 
 	console.log(chalk.underline(`Score: ${score} \n`));
 }
@@ -32,27 +32,27 @@ function askQuestion(ques, ans) {
 var quesList = [
 	{
 		q: 'What is my full name? ',
-		a: 'himadri shah',
+		a: 'Himadri Shah',
 	},
 	{
 		q: 'What is my age? ',
 		a: '21',
 	},
 	{
-		q: 'Where do I live? ',
-		a: 'rajkot',
+		q: 'Which city do I live in? ',
+		a: 'Rajkot',
 	},
 	{
 		q: 'What is my birthdate? ',
 		a: '21',
 	},
 	{
-		q: 'Where was I born? ',
-		a: 'mumbai',
+		q: 'What is my sun sign? ',
+		a: 'Libra',
 	},
 	{
 		q: 'Which college do I study in? ',
-		a: 'v.v.p. engineering college',
+		a: 'V.V.P. Engineering College',
 	},	
 ];
 
