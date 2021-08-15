@@ -51,6 +51,10 @@ var quesList = [
 		a: 'Libra',
 	},
 	{
+		q: 'What is my Mother Tongue? ',
+		a: 'Gujarati',
+	},
+	{
 		q: 'Which college do I study in? ',
 		a: 'V.V.P. Engineering College',
 	},	
